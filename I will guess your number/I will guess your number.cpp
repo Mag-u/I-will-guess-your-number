@@ -8,7 +8,7 @@ int main()
 	int endingNumber = 0;
 	int copy = 0;
 	string stopProgram = "";
-	bool correctNumber = false;
+	bool theNumberIsCorrect = false;
 
 	cout << "Input the range from which you selected the number \n";
 	cout << "The first number: ";
@@ -20,8 +20,8 @@ int main()
 	                                                                             
 	while (startingNumber == endingNumber)                                                    
 	{                                                                                           
-		cout << "The numbers are that same and becouse of it the game can't start" << endl;          
-		cout << "Do you want to input numbers again? Y/N";                                       
+		cout << "The numbers are that same and becouse of it the game can't start " << endl;          
+		cout << "Do you want to input numbers again? Y/N" ;                                       
 		cin >> stopProgram;                                                                   
 		if (stopProgram != "Y")                                                               
 		{                                                                                      
@@ -43,30 +43,32 @@ int main()
 		startingNumber = copy;
 	}
 
-	number = endingNumber / 2;
 
-	while (correctNumber == false)    // and in seven moves?
+	while (theNumberIsCorrect != true)    // and in seven moves?
 	{
-		
+		number = (startingNumber + endingNumber) / 2;
 		string correctNumber = "";
 		string greaterNumber = "";
 
-		cout << "Is " << number << " your number ? Y / N";
+		cout << "Is " << number << " your number? Y / N ";
 		cin >> correctNumber;
 		if (correctNumber != "Y")
 		{
-			cout << endl <<"Is your number greater? Y/N";
+			cout << endl <<"Is your number greater? Y/N ";
 			cin >> greaterNumber;
-			if (greaterNumber != "Y")
+			if (greaterNumber != "N")
 			{
+				startingNumber = number;
+			}
+			else {
 				endingNumber = number;
 			}
 
 		}
 		else
 		{
-			correctNumber = true;
+			theNumberIsCorrect = true;
 		}
 	}
-	cout << endl << "Your number was " << number;
+	cout << endl << "Your number is " << number;
 }
