@@ -8,6 +8,7 @@ int main()
 	int endingNumber = 0;
 	int copy = 0;
 	string stopProgram = "";
+	bool correctNumber = false;
 
 	cout << "Input the range from which you selected the number \n";
 	cout << "The first number: ";
@@ -41,4 +42,31 @@ int main()
 		endingNumber = startingNumber;
 		startingNumber = copy;
 	}
+
+	number = endingNumber / 2;
+
+	while (correctNumber == false)    // and in seven moves?
+	{
+		
+		string correctNumber = "";
+		string greaterNumber = "";
+
+		cout << "Is " << number << " your number ? Y / N";
+		cin >> correctNumber;
+		if (correctNumber != "Y")
+		{
+			cout << endl <<"Is your number greater? Y/N";
+			cin >> greaterNumber;
+			if (greaterNumber != "Y")
+			{
+				endingNumber = number;
+			}
+
+		}
+		else
+		{
+			correctNumber = true;
+		}
+	}
+	cout << endl << "Your number was " << number;
 }
