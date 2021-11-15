@@ -70,5 +70,6 @@ int main()
 			theNumberIsCorrect = true;
 		}
 	}
-	cout << endl << "Your number is " << number;
+	system("CLS");
+	cout << endl << endl << endl << "Your number is " << number << endl << endl << endl;
 }
